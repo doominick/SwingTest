@@ -67,4 +67,16 @@ public class Person {
         return this.toString().hashCode();
     }
     
+    public Name getName(){
+        return this.name;
+    }
+    
+    public void setName(Name name){
+        this.name = name;
+    }
+    
+    public void setName(String name){
+        this.name = new Name(name);
+    }
+    
 }
