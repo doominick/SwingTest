@@ -12,4 +12,20 @@ package FirstSwing;
  */
 public class Email {
     
+    private String username;
+    private String server;
+    
+    public Email(){
+        this.username = "username";
+        this.server = "server.com";
+    }
+    
+    public Email(String email){
+        String[] emailParts = email.split("@");
+        if (emailParts.length > 2) throw new IllegalArgumentException();
+        else {
+            this.username = emailParts[0];
+            this.server = emailParts[1];
+        }
+    }
 }
