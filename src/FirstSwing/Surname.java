@@ -21,4 +21,20 @@ public class Surname {
     Surname(String surname){
         this.surname = surname;
     }
+    
+    @Override
+    public String toString(){
+        return this.surname;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        return (o instanceof Surname)
+                && (this.surname.equals(((Surname)o).surname));
+    }
+    
+    @Override
+    public int hashCode(){
+        return this.surname.hashCode();
+    }
 }

@@ -6,8 +6,6 @@
 
 package FirstSwing;
 
-import java.lang.IllegalArgumentException;
-
 /**
  *
  * @author Dominik
@@ -35,5 +33,22 @@ public class Sex {
     
     public Sex(boolean sex){
         this.sex = sex;
+    }
+    
+    @Override
+    public String toString(){
+        if (this.sex) return "male";
+        else return "female";
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        return (o instanceof Sex) && (this.sex == ((Sex)o).sex);
+    }
+    
+    @Override
+    public int hashCode(){
+        if (this.sex) return 1;
+        else return 0;
     }
 }

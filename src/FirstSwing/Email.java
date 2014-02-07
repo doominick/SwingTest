@@ -28,4 +28,21 @@ public class Email {
             this.server = emailParts[1];
         }
     }
+    
+    @Override
+    public String toString(){
+        return this.username + "@" + this.server;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        return (o instanceof Email) 
+                && (this.username.equalsIgnoreCase(((Email)o).username))
+                && (this.server.equalsIgnoreCase(((Email)o).server));
+    }
+    
+    @Override
+    public int hashCode(){
+        return this.toString().toLowerCase().hashCode();
+    }
 }

@@ -20,4 +20,20 @@ public class Name {
     public Name(String name){
         this.name = name;
     }
+    
+    @Override
+    public String toString(){
+        return this.name;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        return (o instanceof Name)
+                && (this.name.equals(((Name)o).name));
+    }
+    
+    @Override
+    public int hashCode(){
+        return this.name.hashCode();
+    }
 }

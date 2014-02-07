@@ -24,6 +24,13 @@ public class Person {
         this.email = new Email();
     }
     
+    public Person(Name name, Surname surname, Sex sex, Email email){
+        this.name = name;
+        this.surname = surname;
+        this.sex = sex;
+        this.email = email;
+    }
+    
     public Person(String name, String surname, String sex, String email){
         this.name = new Name(name);
         this.surname = new Surname(surname);
@@ -38,5 +45,26 @@ public class Person {
         this.email = new Email(email);
     }
     
+    @Override
+    public String toString(){
+        return this.name.toString() + " " +
+               this.surname.toString() + " " +
+               this.sex.toString() + " " +
+               this.email.toString().toLowerCase();
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        return (o instanceof Person)
+                && (this.email.equals(((Person)o).email))
+                && (this.name.equals(((Person)o).name))
+                && (this.surname.equals(((Person)o).surname))
+                && (this.sex.equals(((Person)o).sex));                
+    }
+    
+    @Override
+    public int hashCode(){
+        return this.toString().hashCode();
+    }
     
 }
