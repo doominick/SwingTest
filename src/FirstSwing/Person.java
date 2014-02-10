@@ -79,4 +79,15 @@ public class Person {
         this.name = new Name(name);
     }
     
+    public Surname getSurname(){
+        return this.surname;
+    }
+    
+    public Sex getSex(){
+        return this.sex;
+    }
+    
+    public Email getEmail(){
+        return this.email;
+    }
 }
