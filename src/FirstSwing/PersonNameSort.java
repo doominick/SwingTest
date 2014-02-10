@@ -14,6 +14,7 @@ import java.util.Comparator;
  */
 public class PersonNameSort implements Comparator<Person> {
     
+    @Override
     public int compare(Person one, Person two){
         return one.getName().toString().compareTo(two.getName().toString());
     }

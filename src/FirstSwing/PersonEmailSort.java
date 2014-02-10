@@ -12,12 +12,12 @@ import java.util.Comparator;
  *
  * @author Dominik
  */
-public class PersonSurnameSort implements Comparator<Person> {
+public class PersonEmailSort implements Comparator<Person>{
     
     @Override
     public int compare(Person one, Person two){
         
-        return one.getSurname().toString().compareTo(two.getSurname().toString());
+        return one.getEmail().toString().compareTo(two.getEmail().toString());
     }
     
 }
