@@ -7,6 +7,7 @@
 package FirstSwing;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,6 +31,17 @@ public class PersonDB {
     }
     
     public void sortByName(){
-        
+        PersonNameSort ns = new PersonNameSort();
+        Collections.sort(personDatabase, ns);
+    }
+    
+    public void sortBySurname(){
+        PersonSurnameSort ss = new PersonSurnameSort();
+        Collections.sort(personDatabase, ss);
+    }
+    
+    public void sortByEmail(){
+        PersonEmailSort es = new PersonEmailSort();
+        Collections.sort(personDatabase, es);
     }
 }
