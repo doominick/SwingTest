@@ -44,4 +44,12 @@ public class PersonDB {
         PersonEmailSort es = new PersonEmailSort();
         Collections.sort(personDatabase, es);
     }
+    
+    public int getSize(){
+        return this.personDatabase.size();
+    }
+    
+    public Person getPerson(int index){
+        return this.personDatabase.get(index);
+    }
 }
