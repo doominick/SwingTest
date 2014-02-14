@@ -181,6 +181,7 @@ public class SwingTestGUI extends javax.swing.JFrame {
                 emailTextField.getText());
         pDB.addPerson(per);
         numberOfRecordsLabel.setText(Integer.toString(pDB.getSize()));
+        pDB.sortBySurname();
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void showRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showRecordButtonActionPerformed
@@ -202,6 +203,7 @@ public class SwingTestGUI extends javax.swing.JFrame {
         pDB.removePerson(pDB.getPerson(index));
         Person person = new Person(name, surname, sex, email);
         pDB.addPerson(person);
+        pDB.sortBySurname();
     }//GEN-LAST:event_updateButtonActionPerformed
 
     /**

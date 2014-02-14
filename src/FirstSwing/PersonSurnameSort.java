@@ -17,7 +17,8 @@ public class PersonSurnameSort implements Comparator<Person> {
     @Override
     public int compare(Person one, Person two){
         
-        return one.getSurname().toString().compareTo(two.getSurname().toString());
+        return one.getSurname().toString().concat(one.getName().toString()).
+                compareTo(two.getSurname().toString().concat(two.getName().toString()));
     }
     
 }
