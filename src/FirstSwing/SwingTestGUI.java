@@ -6,7 +6,6 @@
 
 package FirstSwing;
 
-import javax.swing.DefaultListModel;
 
 /**
  *
@@ -15,7 +14,6 @@ import javax.swing.DefaultListModel;
 public class SwingTestGUI extends javax.swing.JFrame {
 
     PersonDB pDB = new PersonDB();
-    DefaultListModel listModel = new DefaultListModel();
     /**
      * Creates new form SwingTestGUI
      */
