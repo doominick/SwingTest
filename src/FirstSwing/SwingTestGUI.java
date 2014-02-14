@@ -78,6 +78,11 @@ public class SwingTestGUI extends javax.swing.JFrame {
         recordSexTextField.setText("Płeć");
 
         updateButton.setText("Aktualizuj");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
 
         numberOfRecordsLabel.setLabelFor(currentRecordTextField);
         numberOfRecordsLabel.setText("jLabel1");
@@ -186,6 +191,18 @@ public class SwingTestGUI extends javax.swing.JFrame {
         recordSexTextField.setText(pDB.getPerson(index).getSex().toString());
         recordEmailTextField.setText(pDB.getPerson(index).getEmail().toString());
     }//GEN-LAST:event_showRecordButtonActionPerformed
+
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        // TODO add your handling code here:
+        int index = (Integer.parseInt(currentRecordTextField.getText())) - 1;
+        Name name = new Name(recordNameTextField.getText());
+        Surname surname = new Surname(recordSurnameTextField.getText());
+        Sex sex = new Sex(recordSexTextField.getText());
+        Email email = new Email(recordEmailTextField.getText());
+        pDB.removePerson(pDB.getPerson(index));
+        Person person = new Person(name, surname, sex, email);
+        pDB.addPerson(person);
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     /**
      * @param args the command line arguments
