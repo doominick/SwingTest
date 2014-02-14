@@ -83,6 +83,11 @@ public class SwingTestGUI extends javax.swing.JFrame {
         numberOfRecordsLabel.setText("jLabel1");
 
         showRecordButton.setText("OK");
+        showRecordButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showRecordButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,8 +175,17 @@ public class SwingTestGUI extends javax.swing.JFrame {
                 sexComboBox.getSelectedItem().toString(), 
                 emailTextField.getText());
         pDB.addPerson(per);
-        numberOfRecordsLabel.setText(pDB.getSize);
+        numberOfRecordsLabel.setText(Integer.toString(pDB.getSize()));
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void showRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showRecordButtonActionPerformed
+        // TODO add your handling code here:
+        int index = (Integer.parseInt(currentRecordTextField.getText())) - 1;
+        recordNameTextField.setText(pDB.getPerson(index).getName().toString());
+        recordSurnameTextField.setText(pDB.getPerson(index).getSurname().toString());
+        recordSexTextField.setText(pDB.getPerson(index).getSex().toString());
+        recordEmailTextField.setText(pDB.getPerson(index).getEmail().toString());
+    }//GEN-LAST:event_showRecordButtonActionPerformed
 
     /**
      * @param args the command line arguments
